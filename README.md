@@ -1,5 +1,38 @@
-# The web based indi client.
+# The web based indi client
 
+## Undockerized
+It was requested to undockerize the indi_webclient. 
+
+The master branch is the undockerized version for the VATT. The dockerized version still exists in scotts directory. 
+
+|  General Information     |
+|:------:|---------------------------|
+| Websocket port | 3001 (or 3000 if code does specify)             |
+| Nginx website port  | 4002 (localhost:4002 to access pages) |
+| Serivce file | nginx-docker.service (enabled)                |
+| Nginx docker volume   | /home/mtnops/git-clones/indi_webclient/www (maps to /usr/share/nginx/html in docker)               |
+
+
+### NGINX docker
+To avoid issues with ports with Apache on VATT Control, NGINX does run in docker and it is a systemd file. 
+It is enabled and automatically starts. To restart the systemctl
+```bash
+sudo systemctl restart nginx-docker.service
+```
+
+### Reverting Back To Docker
+Scott's directory still contains the dockerized version at VATT. To start that up use the systemd files.
+
+```bash
+sudo systemctl stop nginx-docker.service
+sudo systemctl start webclient-indi.service
+sudo systemctl start webclient-compose.service
+```
+
+**NOTE: You might need to remove the drivers startup in indiserver desktop launcher.**
+
+*Ok, now back to the README.*
+______
 
 ## Description 
 This is an INDI client for the web. It has two parts:
