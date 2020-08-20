@@ -4,12 +4,12 @@
 It was requested to undockerize the indi_webclient. 
 
 The master branch is the undockerized version for the VATT. The dockerized version still exists in scotts directory. 
-| Websocket port      | 3001 (or 3000 if code does not specify)                                              |   |   |   |
-|---------------------|--------------------------------------------------------------------------------------|---|---|---|
-| Nginx website port  | 4002 (localhost:4002 to access pages)                                                |   |   |   |
-| Service file        | nginx-docker.service (enabled)                                                       |   |   |   |
-| Nginx docker volume | /home/mtnops/git-clones/indi_webclient/www (maps to /usr/share/nginx/html in docker) |   |   |   |
-
+| What it be          | Information                                                                          |
+|---------------------|--------------------------------------------------------------------------------------|
+| Websocket port      | 3001 (or 3000 if code does not specify)                                              |
+| Nginx website port  | 4002 (localhost:4002 to access pages)                                                |
+| Service file        | nginx-docker.service (enabled)                                                       |
+| Nginx docker volume | /home/mtnops/git-clones/indi_webclient/www (maps to /usr/share/nginx/html in docker) |
 
 ### NGINX docker
 To avoid issues with ports with Apache on VATT Control, NGINX does run in docker and it is a systemd file. 
