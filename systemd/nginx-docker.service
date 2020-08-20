@@ -1,0 +1,16 @@
+[Unit]
+Description=The nginx HTTP and reverse proxy server
+Documentation=http://nginx.org/en/docs/
+After=docker.service
+Requires=docker.service
+
+[Service]
+Restart=always
+RestartSec=2s
+
+ExecStartPre=-/usr/bin/docker stop nginx
+ExecStartPre=-/usr/bin/docker rm nginx
+ExecStart=/usr/bin/docker run --rm --volume /home/mtnops/git-clones/indi_webclient/www:/usr/share/nginx/html -p 4002:80 nginx
+
+[Install]
+WantedBy=multi-user.target
