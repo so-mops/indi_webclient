@@ -23,5 +23,5 @@ printf "##############################################\n\n"
 
 /snap/bin/midori --app=http://localhost:4002 &
 
-/usr/bin/websocketd --devconsole -port $PORT /home/mtnops/git-clones/indi_webclient/webclient
+/usr/bin/websocketd --devconsole -port $PORT /home/mtnops/src/git-clones/indi_webclient/webclient
 
