@@ -57,7 +57,7 @@ span#cur label, span#nxt label, span#com label
 body
 {
 	/*background:#121212;*/
-  background:#999999;
+  background:gray;
   font-family: Verdana,Arial,sans-serif;
 }
 .INumber_wo, .INumber_ro
