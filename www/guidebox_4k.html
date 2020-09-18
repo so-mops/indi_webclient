@@ -431,49 +431,62 @@
 		label, legend, .INDIgroup h3
 		{
 			/*color:white;*/
-		}
+    }
+    h2 {
+      margin: 0;
+      margin-left: 5px;
+    }
+    .gui-container {
+      box-shadow: 0 0 5px #666666;
+      display: inline-block;
+      padding: 20px;
+      border-radius: 5px;
+      background-color: #999999;
+    }
 	</style>
 </head>
 <body onload="main()">
-  <h2 style="margin-left: 5px;">Secondary</h2>
-	<div class="flex-container">
-		<span id="tipx" class="no-legend" indidevice="VATT Secondary" indigroup="Tip Tilt" indiname="PosV" title="Secondary Tip X"></span>
-		<span id="tipy" class="no-legend" indidevice="VATT Secondary" indigroup="Tip Tilt" indiname="PosU" title="Secondary Tip Y"></span>
-		<span id="focus" class="no-legend" indidevice="VATT Secondary" indigroup="Decenter" indiname="PosZ" title="Secondary Focus"></span>
-		<span class="stacker-span">
-			<span id="ref" class="no-legend stack" indidevice="VATT Secondary" indigroup="Miscellaneous" indiname="ref"></span>
-			<span id="corr" class="no-legend stack" indidevice="VATT Secondary" indigroup="Miscellaneous" indiname="correct"></span>
-		</span>
-		<span id="err" class="no-legend stack" indidevice="VATT Secondary" indigroup="Miscellaneous" indiname="err"></span>
-		<span id="connect" class="no-legend" indidevice="VATT Secondary" indigroup="Main Control" indiname="CONNECTION"></span>
+  <div class="gui-container">
+    <h2 style="margin-left: 5px;">Secondary</h2>
+    <div class="flex-container">
+      <span id="tipx" class="no-legend" indidevice="VATT Secondary" indigroup="Tip Tilt" indiname="PosV" title="Secondary Tip X"></span>
+      <span id="tipy" class="no-legend" indidevice="VATT Secondary" indigroup="Tip Tilt" indiname="PosU" title="Secondary Tip Y"></span>
+      <span id="focus" class="no-legend" indidevice="VATT Secondary" indigroup="Decenter" indiname="PosZ" title="Secondary Focus"></span>
+      <span class="stacker-span">
+        <span id="ref" class="no-legend stack" indidevice="VATT Secondary" indigroup="Miscellaneous" indiname="ref"></span>
+        <span id="corr" class="no-legend stack" indidevice="VATT Secondary" indigroup="Miscellaneous" indiname="correct"></span>
+      </span>
+      <span id="err" class="no-legend stack" indidevice="VATT Secondary" indigroup="Miscellaneous" indiname="err"></span>
+      <span id="connect" class="no-legend" indidevice="VATT Secondary" indigroup="Main Control" indiname="CONNECTION"></span>
+    </div>
+  </div>
+  <div class="gui-container">
+    <h2 style="margin-left: 5px;">Guidebox</h2>
+    <div class="flex-container">
+      <span class="stacker-span" style="margin: 5px;">
+        <span class="stack">
+          <span id="xypos" style="width:299px; height:300px; display:inline-block;flex:none"></span>
+        </span>
+      </span>
+      <span class="stacker-span">
+      <span class="stack">
+        <span class="linear_pos no-legend" indidevice="INDI-VATT-GUIDEBOX" indiname="OFFSET_X" indigroup="Guider Control"></span>
+        <span class="linear_pos no-legend" indidevice="INDI-VATT-GUIDEBOX" indiname="OFFSET_Y" indigroup="Guider Control"></span>
+        <span class="linear_pos no-legend" indidevice="INDI-VATT-GUIDEBOX" indiname="OFFSET_FOCUS" indigroup="Guider Control"></span>
+        <span class="linear_pos no-legend" indidevice="INDI-VATT-GUIDEBOX" indiname="FOCUS_INPUT" indigroup="Guider Control"></span>
+      </span>
+      <span class="fwheel_pos stack"  indidevice="INDI-VATT-GUIDEBOX" indiname="GFS" indigroup="Guider Control"></span>
+      <span class="fwheel_pos stack"  indidevice="INDI-VATT-GUIDEBOX" indiname="UFS" indigroup="Guider Control"></span>
+      <span class="fwheel_pos stack"  indidevice="INDI-VATT-GUIDEBOX" indiname="LFS" indigroup="Guider Control"></span>
+      </span>
+      <span class="stacker-span">
+      <span class="no-legend sbutton stack" indidevice="INDI-VATT-GUIDEBOX" indiname="CONNECTION" indigroup="Guider Control"></span>
+      <span class="no-legend sbutton stack" indidevice="INDI-VATT-GUIDEBOX" indiname="AUTOFOC" indigroup="Guider Control"></span>
+      <span class="linear_pos no-legend stack"  indidevice="INDI-VATT-GUIDEBOX" indiname="MIRRORS" indigroup="Guider Control"></span>
+      <span class="no-legend sbutton stack" indidevice="INDI-VATT-GUIDEBOX" indiname="GUIDE_BOX_ACTIONS" indigroup="Guider Control"></span>
+      </span>
+    </div>
 	</div>
-  <hr style="border: 1px solid black;"/>
-  <h2 style="margin-left: 5px;">Guidebox</h2>
-	<h2 class="flex-container">
-		<span class="stacker-span" style="margin: 5px;">
-			<span class="stack">
-				<span id="xypos" style="width:299px; height:300px; display:inline-block;flex:none"></span>
-			</span>
-		</span>
-		<span class="stacker-span">
-		<span class="stack">
-			<span class="linear_pos no-legend" indidevice="INDI-VATT-GUIDEBOX" indiname="OFFSET_X" indigroup="Guider Control"></span>
-			<span class="linear_pos no-legend" indidevice="INDI-VATT-GUIDEBOX" indiname="OFFSET_Y" indigroup="Guider Control"></span>
-			<span class="linear_pos no-legend" indidevice="INDI-VATT-GUIDEBOX" indiname="OFFSET_FOCUS" indigroup="Guider Control"></span>
-			<span class="linear_pos no-legend" indidevice="INDI-VATT-GUIDEBOX" indiname="FOCUS_INPUT" indigroup="Guider Control"></span>
-		</span>
-		<span class="fwheel_pos stack"  indidevice="INDI-VATT-GUIDEBOX" indiname="GFS" indigroup="Guider Control"></span>
-		<hr/>
-		<span class="fwheel_pos stack"  indidevice="INDI-VATT-GUIDEBOX" indiname="UFS" indigroup="Guider Control"></span>
-		<span class="fwheel_pos stack"  indidevice="INDI-VATT-GUIDEBOX" indiname="LFS" indigroup="Guider Control"></span>
-		</span>
-		<span class="stacker-span">
-		<span class="no-legend sbutton stack" indidevice="INDI-VATT-GUIDEBOX" indiname="CONNECTION" indigroup="Guider Control"></span>
-		<span class="no-legend sbutton stack" indidevice="INDI-VATT-GUIDEBOX" indiname="AUTOFOC" indigroup="Guider Control"></span>
-		<span class="linear_pos no-legend stack"  indidevice="INDI-VATT-GUIDEBOX" indiname="MIRRORS" indigroup="Guider Control"></span>
-		<span class="no-legend sbutton stack" indidevice="INDI-VATT-GUIDEBOX" indiname="GUIDE_BOX_ACTIONS" indigroup="Guider Control"></span>
-		</span>
-	</h2>
 	<textarea rows=3 cols=75 id="INDImsg"></textarea>	
 	
 	<div id="filter_dialog" style="display:none"> 
