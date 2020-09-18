@@ -404,7 +404,7 @@
 		{
 			font-size:1.3vw;
 		}
-		.ui-icon;
+		.ui-icon
 		{
 
 			display:none;
@@ -427,11 +427,6 @@
 		fieldset#OFFSET_FOCUS
 		{
 			min-width:63px;
-			margin:0px;
-		}
-		fieldset
-		{
-			margin:0px;
 		}
 		label, legend, .INDIgroup h3
 		{
@@ -440,6 +435,7 @@
 	</style>
 </head>
 <body onload="main()">
+  <h2 style="margin-left: 5px;">Secondary</h2>
 	<div class="flex-container">
 		<span id="tipx" class="no-legend" indidevice="VATT Secondary" indigroup="Tip Tilt" indiname="PosV" title="Secondary Tip X"></span>
 		<span id="tipy" class="no-legend" indidevice="VATT Secondary" indigroup="Tip Tilt" indiname="PosU" title="Secondary Tip Y"></span>
@@ -451,9 +447,10 @@
 		<span id="err" class="no-legend stack" indidevice="VATT Secondary" indigroup="Miscellaneous" indiname="err"></span>
 		<span id="connect" class="no-legend" indidevice="VATT Secondary" indigroup="Main Control" indiname="CONNECTION"></span>
 	</div>
-	<hr/>
-	<div class="flex-container">
-		<span class="stacker-span">
+  <hr style="border: 1px solid black;"/>
+  <h2 style="margin-left: 5px;">Guidebox</h2>
+	<h2 class="flex-container">
+		<span class="stacker-span" style="margin: 5px;">
 			<span class="stack">
 				<span id="xypos" style="width:299px; height:300px; display:inline-block;flex:none"></span>
 			</span>
@@ -476,7 +473,7 @@
 		<span class="linear_pos no-legend stack"  indidevice="INDI-VATT-GUIDEBOX" indiname="MIRRORS" indigroup="Guider Control"></span>
 		<span class="no-legend sbutton stack" indidevice="INDI-VATT-GUIDEBOX" indiname="GUIDE_BOX_ACTIONS" indigroup="Guider Control"></span>
 		</span>
-	</div>
+	</h2>
 	<textarea rows=3 cols=75 id="INDImsg"></textarea>	
 	
 	<div id="filter_dialog" style="display:none"> 

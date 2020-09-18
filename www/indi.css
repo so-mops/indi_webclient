@@ -1,9 +1,9 @@
 
 :root {
 	--indistate-idle: transparent;
-	--indistate-ok: rgb(0,128,0);
-	--indistate-busy: yellow;
-	--indistate-alert: red;
+	--indistate-ok: #2ecc40;
+	--indistate-busy: #ffdc00;
+	--indistate-alert: #ff3136;
 }
 
 .IText_ro
@@ -33,7 +33,11 @@
 
 fieldset
 {
-	display:inline-block;
+  display:inline-block;
+  border: 1px solid gray;
+  border-radius: 5px;
+  margin: 5px;
+  margin-right: 5px;
 }
 
 fieldset.INDIsvp

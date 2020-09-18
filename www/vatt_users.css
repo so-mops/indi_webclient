@@ -1,6 +1,6 @@
 label, legend, .INDIgroup h3
 {
-	color:salmon;
+	color:black;
 	font-weight:bold;
 }
 fieldset#ACTIONS
@@ -34,6 +34,7 @@ span.no-legend > fieldset > legend
 {
 	display:none;
 }
+
 .ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button	
 {/*not sure we need this*/
 	font-size:0.6em;
@@ -56,7 +57,7 @@ span#cur label, span#nxt label, span#com label
 body
 {
 	/*background:#121212;*/
-	background:gray;
+	background:#999999;
 }
 .INumber_wo, .INumber_ro
 {
@@ -64,7 +65,7 @@ body
 }
 .INumber_ro
 {
-	color:salmon;
+	color:black;
 }
 fieldset.INDIsvp > span.ISwitchspan
 {
