@@ -73,6 +73,7 @@ function nosp(str)
 *************************************/
 function collect()
 {
+  console.debug("Collecting");
 	try
 	{
 		INDIws.send(JSON.stringify({'task':'getProperties'}));
@@ -124,18 +125,21 @@ function INDIwebsocket(url, container, devicelist)
 	INDIws.devicelist = devicelist;
 	INDIws.onerror = function(event)
 	{
+    console.warn("Error with websocket");
 		$("#wsDialog").dialog("open").find('b').text(url);
 	}
 	INDIws.onmessage = function( event )
 	{
+    console.debug("Parsing data")
+    
 		try
 		{
-			var data = JSON.parse( event.data );
-			
+      var data = JSON.parse( event.data );
+      console.debug(data);
 		}
 		catch(err)
 		{
-			console.log(event.data, err);
+			console.error(event.data, err);
 			return;
 		}
 		var ele = '';
@@ -252,7 +256,8 @@ function INDIwebsocket(url, container, devicelist)
 ************************************************************/
 function AddDevice(devname, container, tabdevice)
 {
-	var devselector = "div.INDIdevice#"+nosp(devname);
+  var devselector = "div.INDIdevice#"+nosp(devname);
+  console.debug(devselector);
 	container = (container==undefined)? 'body':container;
 	var uler = "ul";
 
@@ -518,6 +523,8 @@ function newNumber(INDIvp, appendTo)
 
 function newSwitch( INDIvp, appendTo )
 {
+  console.debug("Updating switches")
+  console.debug(`Switch: ${INDIvp.name}`);
 	var nosp_vpname = INDIvp.name.replace( " ", "_" );
 	var nosp_dev = INDIvp.device.replace( " ", "_" );
 	var vpselector = "fieldset.INDIvp#"+nosp_vpname+"[device='"+INDIvp.device+"']";
@@ -537,7 +544,7 @@ function newSwitch( INDIvp, appendTo )
 	
 	if( $(vpselector).length == 0 )
 	{
-		
+		console.info("Building switches");
 		var vphtmldef = $( "<fieldset class='INDIvp INDIsvp'/>" )
 			.prop("id", nosp_vpname)
 			.attr("device", INDIvp.device)
@@ -596,7 +603,7 @@ function newSwitch( INDIvp, appendTo )
 
 	else
 	{
-		
+		console.info("Updating switches");
 		$.each(INDIvp.sp, function(ii, sp)
 		{
 			var label = sp.label.replace(" ", "_");

@@ -18,10 +18,12 @@
 	
 	function main()
 	{
+    console.debug("Running main");
 		CONFIG["NUM_SIZE"] = 1;
 		CONFIG["SHOW_SWITCH_ICON"] = false;
 		var host = location.host.split(":")[0];
-		var url="ws://"+host+":3001";
+    var url="ws://"+host+":3001";
+    console.info(`Opening websocket: ${url}`);
 		INDIwebsocket(url, 'body', ["INDI-VATT-GUIDEBOX", "VATT Secondary"]);
 		connectionDetect();
 		setTimeout(idleProc, 1000);
@@ -30,8 +32,9 @@
 
 	function connectionDetect()
 	{
-		var conn_sel = "fieldset#CONNECTION.INDIsvp"
-		console.log( $(conn_sel).length );
+    var conn_sel = "fieldset#CONNECTION.INDIsvp"
+    console.debug(`Connection selector: ${conn_sel}`);
+		//console.log( $(conn_sel).length );
 		setTimeout(connectionDetect, 2000);
 
 			
@@ -54,6 +57,7 @@
 	 ******************************************/
 	function idleProc()
 	{
+    console.info("Running idleProc()");
 		var lfs_sel = "fieldset#LFS.INDIsvp"
 		var ufs_sel = "fieldset#UFS.INDIsvp"
 		var gfs_sel = "fieldset#GFS.INDIsvp"
@@ -109,6 +113,7 @@
 	 *******************************************************/
 	function postProc(INDIvp, ele)
 	{
+    console.info("Running postProc()");
 		var devselector = "div.INDIdevice#"+nosp(INDIvp.device);
 		var grpselector = devselector+" div.INDIgroup#"+nosp(INDIvp.group);
 		var menuselector = devselector+" ul.devmenu li ul"
