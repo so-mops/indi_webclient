@@ -105,10 +105,10 @@ h2 {
   margin: 5px;
 }
 legend, label, span.ISwitchspan > label {
-  font-size:1.2vw;
+  font-size:1.6vw;
 }
 input.INumber_wo{
-  font-size:1.3vw;
+  font-size:1.6vw;
   min-width:6.0vw;
 }
 .ui-icon{
