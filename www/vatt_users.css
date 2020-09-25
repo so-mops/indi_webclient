@@ -93,5 +93,32 @@ fieldset#err > span > textarea
   font-size:10px;
   font-family: Verdana,Arial,sans-serif;
 }
+.gui-container {
+  box-shadow: 0 0 5px #666666;
+  display: inline-block;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #999999;
+  margin: 20px;
+}
+h2 {
+  margin: 0;
+  margin-left: 5px;
+}
+legend, label, span.ISwitchspan > label {
+  font-size:1.2vw;
+}
+input.INumber_wo{
+  font-size:1.3vw;
+  min-width:6.0vw;
+}
+.ui-icon{
+  display:none;
+}
+h1 {
+  letter-spacing: 3px;
+  margin: 0;
+  text-align: center;
+}
 
 

@@ -4,7 +4,7 @@
 	 <meta charset="UTF-8">
 	<script src="plotly/plotly-latest.min.js"></script>
 
-	<Title> VATT4K Guidebox and Secondary</Title>
+	<Title> VATTSpec Guidebox and Secondary</Title>
 	
 	<link rel="stylesheet" href="indi.css">
 	<script src="jquery-1.12.4.js"></script>
@@ -33,8 +33,8 @@
 	function connectionDetect()
 	{
     var conn_sel = "fieldset#CONNECTION.INDIsvp"
-    console.debug(`Connection selector: ${conn_sel}`);
-		//console.log( $(conn_sel).length );
+    
+		console.debug( $(conn_sel).length );
 		setTimeout(connectionDetect, 2000);
 
 			
@@ -204,22 +204,6 @@
 			/*display:block;*/
 			flex:0 0 auto;
 		}
-		legend, label, span.ISwitchspan > label
-		{
-			font-size:1.8vw;
-		
-		}
-		input.INumber_wo
-		{
-			font-size:1.3vw;
-			min-width:6.0vw;
-		}
-		.ui-icon;
-		{
-
-			display:none;
-			
-		}
 		fieldset#LFS.INDIsvp > span.ISwitchspan,
 		fieldset#UFS.INDIsvp > span.ISwitchspan,
 		fieldset#MIRRORS.INDIsvp > span.ISwitchspan
@@ -239,40 +223,45 @@
 			min-width:63px;
 			margin:0px;
 		}
-		fieldset
-		{
-			margin:0px;
-		}
-		label, legend, .INDIgroup h3
-		{
-			color:white;
-		}
+
 	</style>
 </head>
 <body onload="main()">
-	<div class="flex-container">
-		<span id="tipx" class="no-legend" indidevice="VATT Secondary" indigroup="Tip Tilt" indiname="PosV" title="Secondary Tip X"></span>
-		<span id="tipy" class="no-legend" indidevice="VATT Secondary" indigroup="Tip Tilt" indiname="PosU" title="Secondary Tip Y"></span>
-		<span id="focus" class="no-legend" indidevice="VATT Secondary" indigroup="Decenter" indiname="PosZ" title="Secondary Focus"></span>
-		<span id="connect" class="no-legend" indidevice="VATT Secondary" indigroup="Main Control" indiname="CONNECTION"></span>
-	</div>
-	<div class="flex-container">
-		<span id="ref" class="no-legend" indidevice="VATT Secondary" indigroup="Miscellaneous" indiname="ref"></span>
-		<span id="corr" class="no-legend" indidevice="VATT Secondary" indigroup="Miscellaneous" indiname="correct"></span>
-		<span id="err" class="no-legend stack" indidevice="VATT Secondary" indigroup="Miscellaneous" indiname="err"></span>
-	</div>
-	<hr/>
-	<div class="flex-container">
-		<span class="stacker-span">
-			<span class="fwheel_pos stack"  indidevice="INDI-VATT-GUIDEBOX" indiname="UFS" indigroup="Guider Control"></span>
-			<span class="fwheel_pos stack"  indidevice="INDI-VATT-GUIDEBOX" indiname="LFS" indigroup="Guider Control"></span>
-			<span class="linear_pos no-legend stack"  indidevice="INDI-VATT-GUIDEBOX" indiname="MIRRORS" indigroup="Guider Control"></span>
-		</span>
-			<span class="stacker-span">
-			<span class="no-legend sbutton stack" indidevice="INDI-VATT-GUIDEBOX" indiname="CONNECTION" indigroup="Guider Control"></span>
-			<span class="no-legend sbutton stack" indidevice="INDI-VATT-GUIDEBOX" indiname="GUIDE_BOX_ACTIONS" indigroup="Guider Control"></span>
-		</span>
-	</div>
+  <div class="gui-container">
+    <h1>VATTSpec</h1>
+    <h2>Secondary</h2>
+    <div class="flex-container">
+      <span id="tipx" class="no-legend" indidevice="VATT Secondary" indigroup="Tip Tilt" indiname="PosV"
+        title="Secondary Tip X"></span>
+      <span id="tipy" class="no-legend" indidevice="VATT Secondary" indigroup="Tip Tilt" indiname="PosU"
+        title="Secondary Tip Y"></span>
+      <span id="focus" class="no-legend" indidevice="VATT Secondary" indigroup="Decenter" indiname="PosZ"
+        title="Secondary Focus"></span>
+      <span id="connect" class="" indidevice="VATT Secondary" indigroup="Main Control"
+        indiname="CONNECTION"></span>
+    </div>	
+    <div class="flex-container">
+      <span id="ref" class="no-legend" indidevice="VATT Secondary" indigroup="Miscellaneous" indiname="ref"></span>
+      <span id="corr" class="no-legend" indidevice="VATT Secondary" indigroup="Miscellaneous" indiname="correct"></span>
+      <span id="err" class="no-legend stack" indidevice="VATT Secondary" indigroup="Miscellaneous" indiname="err"></span>
+    </div>
+    <h2>Guidebox</h2>
+    <div class="flex-container">
+      <span class="stacker-span">
+        <span class="fwheel_pos stack" indidevice="INDI-VATT-GUIDEBOX" indiname="UFS" indigroup="Guider Control"></span>
+        <span class="fwheel_pos stack" indidevice="INDI-VATT-GUIDEBOX" indiname="LFS" indigroup="Guider Control"></span>
+        <span class="linear_pos stack" indidevice="INDI-VATT-GUIDEBOX" indiname="MIRRORS"
+          indigroup="Guider Control"></span>
+      </span>
+      <span class="stacker-span">
+        <span class="sbutton stack" indidevice="INDI-VATT-GUIDEBOX" indiname="CONNECTION"
+          indigroup="Guider Control"></span>
+        <span class="sbutton stack" indidevice="INDI-VATT-GUIDEBOX" indiname="GUIDE_BOX_ACTIONS"
+          indigroup="Guider Control"></span>
+      </span>
+    </div>
+  </div>
+	
 	<textarea rows=3 cols=75 id="INDImsg"></textarea>	
 	
 	<div id="filter_dialog" style="display:none"> 

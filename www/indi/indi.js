@@ -219,6 +219,7 @@ function INDIwebsocket(url, container, devicelist)
 	};
 	INDIws.onerror = function(event)
 	{
+    console.error("Websocket error!");
 		//alert("There was an error!", event)
 	}
 	INDIws.onclose = function(event)
@@ -665,6 +666,7 @@ function newLight( INDIvp, appendTo )
             var lpid = nosp_dev+"__"+name;
             var lpname = nosp_dev+'__'+nosp_vpname;
             var scolor = "transparent";
+            let lightclass = "var( --indistate-idle )";
             switch(lp.s)
             {
                 case INDISTATE_IDLE:
@@ -679,6 +681,9 @@ function newLight( INDIvp, appendTo )
                 case INDISTATE_ALERT:
                     lightclass = "var( --indistate-alert )";
                 break;
+                default:
+                  lightclass = "var( --indistate-idle )";
+                  console.warn("Did not get appropiate switch value");
             }
             vphtmldef.append
             (
@@ -721,6 +726,8 @@ function newLight( INDIvp, appendTo )
             var name = lp.name.replace(' ', '_');
             var lpid = nosp_dev +"__"+ name;
             var state = lp.state
+            let lightclass = "var( --indistate-idle )";
+
 			switch(lp.s)
             {
                 case INDISTATE_IDLE:
@@ -735,6 +742,9 @@ function newLight( INDIvp, appendTo )
                 case INDISTATE_ALERT:
                     lightclass = "var( --indistate-alert )";
                 break;
+                default:
+                  lightclass = "var( --indistate-idle )";
+                  console.warn("Did not get appropiate switch value");
             }
             $(vpselector).find('label#'+lpid+'.ILightlabel').css("background-color", lightclass);
 
@@ -889,7 +899,8 @@ function indistate2css(INDIvp_state)
 			retn = 'var( --indistate-alert )'
 		break;
 		default:
-			throw("Unkown State error " + INDIvp_state + " Should be " + INDISTATE_IDLE + ", " +  INDISTATE_OK + ", " +INDISTATE_BUSY + "or " + INDISTATE_ALERTa + "not " + INDIvp_state  );
+      retn = 'var( --indistate-idle )'
+			console.warn(`Unknown indistate: ${INDIvp_state}`);
 	
 	}
 	return retn;
