@@ -1,9 +1,9 @@
 
 :root {
 	--indistate-idle: transparent;
-	--indistate-ok: #2ecc40;
-	--indistate-busy: #ffdc00;
-	--indistate-alert: #ff3136;
+	--indistate-ok: green;
+	--indistate-busy: yellow;
+	--indistate-alert: red;
 }
 
 .IText_ro

@@ -102,8 +102,7 @@ fieldset#err > span > textarea
   margin: 20px;
 }
 h2 {
-  margin: 0;
-  margin-left: 5px;
+  margin: 5px;
 }
 legend, label, span.ISwitchspan > label {
   font-size:1.2vw;
