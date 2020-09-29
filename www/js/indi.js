@@ -190,13 +190,17 @@ function INDIwebsocket(url, container, devicelist)
 				ele = newLight( data );
 			break;
 			case "msg":
-				var logText = "div#INDImsg";
-        //console.log("Message", data.msg);
+				var logText = document.getElementById("INDImsg");
         var newMessage = document.createElement("p");
-        //var msgarea = $(msgselector);
-        newMessage.textContent = data.msg
+        var logHeight = logText.scrollHeight;
+        var isScrolledToBottom = logText.scrollHeight - logText.clientHeight <= logText.scrollTop + 1;
+        // https://stackoverflow.com/questions/25505778/automatically-scroll-down-chat-div
+        newMessage.textContent = `${data.msg}`
         logText.appendChild(newMessage);
-				//msgarea.text( data.msg+'\n'+msgarea.text() );
+        if (isScrolledToBottom) {
+          logText.scrollTo(0, logHeight,);
+        }
+				
 
 			break;
 			default:
