@@ -195,7 +195,8 @@ function INDIwebsocket(url, container, devicelist)
         var logHeight = logText.scrollHeight;
         var isScrolledToBottom = logText.scrollHeight - logText.clientHeight <= logText.scrollTop + 1;
         // https://stackoverflow.com/questions/25505778/automatically-scroll-down-chat-div
-        newMessage.textContent = `${data.msg}`
+        newMessage.textContent = `${data.msg}`;
+        newMessage.classList.add("mb-0")
         logText.appendChild(newMessage);
         if (isScrolledToBottom) {
           logText.scrollTo(0, logHeight,);

@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/jquery-ui.min.css">
   <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/all.css">
   <script src="js/jquery-1.12.4.js"></script>
   <script src="js/jquery-ui.js"></script>
   <script src="js/plotly-latest.min.js"></script>
@@ -191,12 +192,16 @@
 </head>
 <body onload="main()">
   <div class="container-fluid">
-    <div class="card shadow">
-      <div class="card-header">
-        <p class="h2">VATTSpec</p>
+    <div class="card shadow border-0 my-4">
+      <div class="card-header border-0 bg-white">
+        <div class="row">
+          <div class="col">
+            <p class="h4"><i class="fas fa-cogs"></i> VATTSpec</p>
+          </div>
+        </div>
       </div>
       <div class="card-body">
-        <p class="h5 card-title">Secondary</p>
+        <p class="lead card-title">Secondary</p>
         <div class="row">
           <div class="col">
             <span id="tipx" class="no-legend" indidevice="VATT Secondary" indigroup="Tip Tilt" indiname="PosV"
@@ -223,7 +228,11 @@
             <span id="err" class="no-legend stack" indidevice="VATT Secondary" indigroup="Miscellaneous" indiname="err"></span>
           </div>
         </div>
-        <p class="h5 card-title">Guidebox</p>
+        <div class="row">
+          <div class="col">
+            <p class="lead card-title">Guidebox</p>
+          </div>
+        </div>
         <div class="row">
           <div class="col">
             <span class="sbutton stack" indidevice="INDI-VATT-GUIDEBOX" indiname="CONNECTION" indigroup="Guider Control"></span>
@@ -255,19 +264,18 @@
     <!-- BEGIN LOGGER -->
     <div class="row mb-4">
       <div class="col-12">
-        <div class="card shadow">
-          <div class="card-header">
+        <div class="card shadow border-0">
+          <div class="card-header border-0 bg-white">
             <div class="row">
               <div class="col">
-                <p class="h2"><i class="fas fa-file-alt"></i> INDI Log</p>
+                <p class="h4"><i class="fas fa-file-alt"></i> INDI Log</p>
               </div>
             </div>
           </div>
           <div class="card-body">
             <div class="row">
               <div class="col">
-                <div class="small overflow-auto border border-secondary" id="INDImsg"
-                  style="max-height: 200px; min-height:200px;">
+                <div class="small overflow-auto border border-secondary rounded" id="INDImsg" style="max-height: 200px; min-height:200px;">
                 </div>
               </div>
             </div>
