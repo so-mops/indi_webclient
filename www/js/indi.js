@@ -190,10 +190,13 @@ function INDIwebsocket(url, container, devicelist)
 				ele = newLight( data );
 			break;
 			case "msg":
-				var msgselector = "textarea#INDImsg";
-				//console.log("Message", data.msg);
-				var msgarea = $(msgselector);
-				msgarea.text( data.msg+'\n'+msgarea.text() );
+				var logText = "div#INDImsg";
+        //console.log("Message", data.msg);
+        var newMessage = document.createElement("p");
+        //var msgarea = $(msgselector);
+        newMessage.textContent = data.msg
+        logText.appendChild(newMessage);
+				//msgarea.text( data.msg+'\n'+msgarea.text() );
 
 			break;
 			default:
