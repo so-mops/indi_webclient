@@ -5,13 +5,14 @@
 	<script src="plotly/plotly-latest.min.js"></script>
 
 	<Title> VATT4K Guidebox and Secondary</Title>
-	
-	<link rel="stylesheet" href="indi.css">
-	<script src="jquery-1.12.4.js"></script>
-	<script src="jquery-ui.js"></script>
-	<script src="plotly/plotly-latest.min.js"></script>
-	<link rel="stylesheet" href="jquery-ui-1.12.1.custom/jquery-ui.min.css">
-	<script src="indi/indi.js"></script>
+  
+  <!-- Import all necessary stylesheets and js -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/jquery-ui.min.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+	<script src="js/jquery-1.12.4.js"></script>
+	<script src="js/jquery-ui.js"></script>
+	<script src="js/plotly-latest.min.js"></script>
 
 	<script>
 	function main()
@@ -19,11 +20,10 @@
 		CONFIG["NUM_SIZE"] = 1;
 		CONFIG["SHOW_SWITCH_ICON"] = false;
 		var host = location.host.split(":")[0];
-		var url="ws://"+host+":3001";
+    var url="ws://"+host+":3001";
 		INDIwebsocket(url, 'body', ["INDI-VATT-GUIDEBOX", "VATT Secondary"]);
 		buildxy();
 		setTimeout(idleProc, 1000);
-
 	}	
 
 	/*******************************************
@@ -74,7 +74,7 @@
 			}
 		}
 
-		//Check for good values as soon as someon types them
+		//Check for good values as soon as someone types them
 		$("span#OFFSET_X.INumberspan > input.INumber_wo").keyup(
 			function()
 			{
@@ -166,8 +166,8 @@
 				}
 			});
 
-		$("span#INITIALIZE.ISwitchspan").prop("title", "Initializes or resets the guidebox. This will cause you to loose position. This should not normally be used unless a motor is in a software limit and won't move.")
-		$("span#HOME.ISwitchspan").prop("title", "Refrences or homes the guidebox motors. This should only need to be done once after a lightning shutdown.")
+		$("span#INITIALIZE.ISwitchspan").prop("title", "Initializes or resets the guidebox. This will cause you to lose position. This should not normally be used unless a motor is in a software limit and won't move.")
+		$("span#HOME.ISwitchspan").prop("title", "References or homes the guidebox motors. This should only need to be done once after a lightning shutdown.")
 		//The below .each function iterates through
 		// all the filter wheel switches and allows
 		// you to bind a right click event to them 
