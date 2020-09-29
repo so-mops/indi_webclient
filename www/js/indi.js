@@ -708,7 +708,7 @@ function newLight( INDIvp, appendTo )
                     'class'         :'ILightlabel',
                     'id'               :lpid,
                     'text'          :lp.label,
-					'style'		:	"background-color:"+lightclass
+					'style'		:	"color:"+lightclass
 
                 })));
            
