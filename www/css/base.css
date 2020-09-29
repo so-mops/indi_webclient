@@ -23,6 +23,12 @@ fieldset.INDIsvp
 	--indistate-idle: transparent;
 }
 
+fieldset {
+  border-radius: 5px;
+  margin: .25rem;
+  padding: .5rem;
+}
+
 
 textarea#INDImsg
 {
