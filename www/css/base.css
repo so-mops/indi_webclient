@@ -1,6 +1,6 @@
 :root {
 	--indistate-idle: transparent;
-	--indistate-ok: #f5222d;
+	--indistate-ok: #00c851;
 	--indistate-busy: yellow;
 	--indistate-alert: red;
 }
