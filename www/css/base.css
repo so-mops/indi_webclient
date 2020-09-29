@@ -100,14 +100,20 @@ span#cur textarea, span#nxt textarea, span#com textarea
 
 body > fieldset {
   /*Don't display any uncaptured INDI Vector Props*/
-	display:none;
+  display:none;
 }
 
 .card-body {
-  padding-top: 0rem;
+  padding-top: 1em;
+  background-color: white;
 }
 .card-header {
   padding-bottom: 0rem;
+  background-color: white;
+  
+}
+body {
+  background-color: lightgray;
 }
 
 
