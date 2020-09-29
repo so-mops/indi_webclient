@@ -253,10 +253,32 @@
       </div>
     </div>
   </div>
+  <!-- BEGIN LOGGER -->
+  <div class="row mb-4">
+    <div class="col-12">
+      <div class="card shadow">
+        <div class="card-header">
+          <div class="row">
+            <div class="col">
+              <p class="h2"><i class="fas fa-file-alt"></i> INDI Log</p>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col">
+              <div class="small overflow-auto border border-secondary" id="INDImsg" style="max-height: 200px; min-height:200px;">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- END LOGGER -->
 </body>
-	
-	<textarea rows=3 cols=75 id="INDImsg"></textarea>	
-	
+		
 	<div id="filter_dialog" style="display:none"> 
 		<input type="text" id="filter_name_input"> </input>
 		<script>
