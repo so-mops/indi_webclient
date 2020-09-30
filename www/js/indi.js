@@ -217,7 +217,8 @@ function INDIwebsocket(url, container, devicelist)
 				var prop="color";
 	
 			$(ele).css( prop, indistate2css( data.state ) )
-			var container = postProc( data, ele ) 
+      var container = postProc( data, ele )
+      console.warn(container)
 			if( typeof(ele) != 'string' )
 			{
 				ele.appendTo( container )
@@ -888,7 +889,7 @@ function sendNewText(event)
 	INDIws.send(JSON.stringify(out));
 }
 
-
+// Change colors in here to apply to whole gui
 function indistate2css(INDIvp_state)
 {
 	switch(INDIvp_state)
@@ -898,7 +899,7 @@ function indistate2css(INDIvp_state)
 			retn = 'var( --indistate-idle )'
 		break;
 		case( INDISTATE_OK ):
-			retn = "magenta"//'var( --indistate-ok )'
+			retn = 'var( --indistate-ok )'
 		break;
 		case( INDISTATE_BUSY ):
 			retn = 'var( --indistate-busy )'
