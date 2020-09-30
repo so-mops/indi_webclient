@@ -28,7 +28,7 @@ const loggingFormat = [
 const logMessage = (message, level) => {
   //https://stackoverflow.com/questions/18614301/keep-overflow-div-scrolled-to-bottom-unless-user-scrolls-up
 
-  var logText = document.getElementById("guilog");
+  var logText = document.getElementById("guimsg");
 
   var newMessage = document.createElement("p");
   var color = loggingFormat[level].color;
