@@ -104,7 +104,7 @@ body > fieldset {
 }
 
 .card-body {
-  padding-top: 1em;
+  padding-top: 0;
   background-color: #1f273c;
 }
 .card-header {
