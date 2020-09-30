@@ -125,7 +125,6 @@ function INDIwebsocket(url, container, devicelist)
 	INDIws.devicelist = devicelist;
 	INDIws.onerror = function(event)
 	{
-    logging.error("Error with websocket");
 		$("#wsDialog").dialog("open").find('b').text(url);
 	}
 	INDIws.onmessage = function( event )
@@ -227,7 +226,6 @@ function INDIwebsocket(url, container, devicelist)
 	};
 	INDIws.onerror = function(event)
 	{
-    logging.error("Websocket error");
 		//alert("There was an error!", event)
 	}
 	INDIws.onclose = function(event)
@@ -235,8 +233,6 @@ function INDIwebsocket(url, container, devicelist)
 		//alert("The connection has closed! If possible restart the webserver. This interface will reload when you hit ok.");
 		//
     //location.reload()
-    logging.warning("Websocket closed")
-		//logging.log(event, "websocket closed");
 	}
 
 	INDIws.onopen = function(event) 
@@ -350,7 +346,6 @@ function newText( INDIvp, appendTo )
 				{
 					if(event.which == 13)	
 					{
-            logging.info(`Sending input`);
 						sendNewText(event)
 						return false;
 					}
@@ -786,7 +781,6 @@ function sendNewSwitch(event)
 {
 	var fs = $(event.target).closest(".INDIsvp")
   //console.log(event.target);
-  logging.info(`Sending ${$(sp).closest("span.ISwitchspan").attr("INDIname")} ${$(sp).closest("span.ISwitchspan").find("input.ISwitchinput").prop("checked")}`)
 	var out = {
 		"task":"updateSwitch",
 		"newSwitch":{
@@ -867,7 +861,6 @@ function sendNewText(event)
 {
 	var ft = $(event.target).closest(".INDItvp");
   var IText = $(event.target);
-  logging.info(`Sending ${IText.prop("value")}`)
 	var out = {
 		"task":"updateText",
 		"newText":{
