@@ -461,7 +461,7 @@ function newNumber(INDIvp, appendTo)
 					len=CONFIG["NUM_SIZE"];
 				}
 				var ro = $('<span/>', {'class':'INumber_ro'}).css({ width:10*len+'px' })
-				var wo = $("<input/>", {'type':'text', 'class':'INumber_wo'})//.prop('size',len)
+				var wo = $("<input/>", {'type':'text', 'class':'INumber_wo'}).prop('size','7')
 				.attr("value", np.value )
 				.keypress(function(event)
 				{
