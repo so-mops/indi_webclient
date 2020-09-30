@@ -319,6 +319,8 @@
 				{
 					if( event.which == 13 )
 					{
+            logging.info("Updating filter name")
+            logging.warning("Page will refresh when finished")
 						var fname = $(this).val();
 						var re_iname = /(L|U)F(\d)S/g
 						var indiname = $("input.filter_context").attr("id");
