@@ -4,7 +4,7 @@
 	--indistate-busy: yellow;
 	--indistate-alert: red;
 }
-/* 
+
 .IText_ro
 {
 	display:table;
@@ -16,7 +16,7 @@
 	font-weight:bold;
 	font-size:16px;
 	
-} */
+}
 
 fieldset.INDIsvp
 {
@@ -29,15 +29,6 @@ fieldset {
   padding: .5rem;
 }
 
-
-textarea#INDImsg
-{
-	position:fixed;
-	bottom:10px;
-	right:10px;
-	margin:auto;
-	box-shadow: 5px 5px;
-}
 /* 
 .INDIgroup
 {
