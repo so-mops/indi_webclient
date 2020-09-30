@@ -349,6 +349,7 @@ function newText( INDIvp, appendTo )
 				{
 					if(event.which == 13)	
 					{
+            logging.info(`Sending input`);
 						sendNewText(event)
 						return false;
 					}
@@ -459,8 +460,8 @@ function newNumber(INDIvp, appendTo)
 				{
 					len=CONFIG["NUM_SIZE"];
 				}
-				var ro = $('<span/>', {'class':'INumber_ro'}).css({ width:10*len+'px' })
-				var wo = $("<input/>", {'type':'text', 'class':'INumber_wo'}).prop('size',len)
+				var ro = $('<span/>', {'class':'INumber_ro'})//.css({ width:10*len+'px' })
+				var wo = $("<input/>", {'type':'text', 'class':'INumber_wo'})//.prop('size',len)
 				.attr("value", np.value )
 				.keypress(function(event)
 				{
