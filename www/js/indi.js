@@ -754,7 +754,7 @@ function newLight( INDIvp, appendTo )
                   lightclass = "var( --indistate-idle )";
                   console.warn("Did not get appropiate switch value");
             }
-            $(vpselector).find('label#'+lpid+'.ILightlabel').css("background-color", "magenta");
+            $(vpselector).find('label#'+lpid+'.ILightlabel').css("background-color", lightclass);
 
             //console.log($("body fieldset.INDIsvp#"+nosp_vpname+"[device='"+INDIvp.device+"']"))
         });
@@ -898,7 +898,7 @@ function indistate2css(INDIvp_state)
 			retn = 'var( --indistate-idle )'
 		break;
 		case( INDISTATE_OK ):
-			retn = 'var( --indistate-ok )'
+			retn = "magenta"//'var( --indistate-ok )'
 		break;
 		case( INDISTATE_BUSY ):
 			retn = 'var( --indistate-busy )'
