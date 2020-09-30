@@ -125,21 +125,21 @@ function INDIwebsocket(url, container, devicelist)
 	INDIws.devicelist = devicelist;
 	INDIws.onerror = function(event)
 	{
-    console.warn("Error with websocket");
+    logging.error("Error with websocket");
 		$("#wsDialog").dialog("open").find('b').text(url);
 	}
 	INDIws.onmessage = function( event )
 	{
-    console.debug("Parsing data")
+    //console.debug("Parsing data")
     
 		try
 		{
       var data = JSON.parse( event.data );
-      console.debug(data);
+      //console.debug(data);
 		}
 		catch(err)
 		{
-			console.error(event.data, err);
+			console.log(event.data, err);
 			return;
 		}
 		var ele = '';
@@ -227,15 +227,16 @@ function INDIwebsocket(url, container, devicelist)
 	};
 	INDIws.onerror = function(event)
 	{
-    console.error("Websocket error!");
+    logging.error("Websocket error");
 		//alert("There was an error!", event)
 	}
 	INDIws.onclose = function(event)
 	{
 		//alert("The connection has closed! If possible restart the webserver. This interface will reload when you hit ok.");
 		//
-		//location.reload()
-		console.log(event, "websocket closed");
+    //location.reload()
+    logging.warning("Websocket closed")
+		//logging.log(event, "websocket closed");
 	}
 
 	INDIws.onopen = function(event) 
@@ -460,7 +461,7 @@ function newNumber(INDIvp, appendTo)
 				{
 					len=CONFIG["NUM_SIZE"];
 				}
-				var ro = $('<span/>', {'class':'INumber_ro'}).css("width", "70px")
+				var ro = $('<span/>', {'class':'INumber_ro'}).css("width", "55px")
 				var wo = $("<input/>", {'type':'text', 'class':'INumber_wo'}).prop('size','7')
 				.attr("value", np.value )
 				.keypress(function(event)
@@ -784,7 +785,8 @@ function newLight( INDIvp, appendTo )
 function sendNewSwitch(event)
 {
 	var fs = $(event.target).closest(".INDIsvp")
-	console.log(event.target);
+  //console.log(event.target);
+  logging.info(`Sending ${$(sp).closest("span.ISwitchspan").attr("INDIname")} ${$(sp).closest("span.ISwitchspan").find("input.ISwitchinput").prop("checked")}`)
 	var out = {
 		"task":"updateSwitch",
 		"newSwitch":{
@@ -864,7 +866,8 @@ function sendNewNumber(event)
 function sendNewText(event)
 {
 	var ft = $(event.target).closest(".INDItvp");
-	var IText = $(event.target);
+  var IText = $(event.target);
+  logging.info(`Sending ${IText.prop("value")}`)
 	var out = {
 		"task":"updateText",
 		"newText":{
