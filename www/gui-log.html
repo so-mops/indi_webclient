@@ -1,0 +1,45 @@
+<!-- BEGIN LOGGER -->
+<div class="card border-0 shadow-sm">
+  <div class="card-header border-0">
+    <div class="row">
+      <div class="col">
+        <p class="lead"><i class="fas fa-file-alt"></i> Log</p>
+      </div>
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="row small">
+      <div class="col">
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="debugCheckbox" value="true" checked>
+          <label class="form-check-label" for="debugCheckbox">Debug</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="infoCheckbox" value="true" checked>
+          <label class="form-check-label" for="infoCheckbox">Info</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="warningCheckbox" value="true" checked>
+          <label class="form-check-label" for="warningCheckbox">Warning</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="errorCheckbox" value="true" checked>
+          <label class="form-check-label" for="errorCheckbox">Error</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="criticalCheckbox" value="true" checked>
+          <label class="form-check-label" for="criticalCheckbox">Critical</label>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="small overflow-auto" id="log"
+          style="max-height: 200px; min-height:200px;">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- END LOGGER -->
