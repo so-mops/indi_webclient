@@ -708,7 +708,7 @@ function newLight( INDIvp, appendTo )
                     'class'         :'ILightlabel',
                     'id'               :lpid,
                     'text'          :lp.label,
-					'style'		:	"background-color:magenta"
+					'style'		:	"background-color:"+lightclass
 
                 })));
            
@@ -754,7 +754,7 @@ function newLight( INDIvp, appendTo )
                   lightclass = "var( --indistate-idle )";
                   console.warn("Did not get appropiate switch value");
             }
-            $(vpselector).find('label#'+lpid+'.ILightlabel').css("background-color", lightclass);
+            $(vpselector).find('label#'+lpid+'.ILightlabel').css("background-color", "magenta");
 
             //console.log($("body fieldset.INDIsvp#"+nosp_vpname+"[device='"+INDIvp.device+"']"))
         });
