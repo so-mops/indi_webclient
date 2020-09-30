@@ -158,6 +158,16 @@ body {
   background-color: #1f273c;
 }
 
+span.INumber_ro {
+  display: inline-block;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-weight: 700;
+}
+
+input.INumber_wo{
+  min-width: 75px;
+}
 
 
 
