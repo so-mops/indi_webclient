@@ -218,7 +218,6 @@ function INDIwebsocket(url, container, devicelist)
 	
 			$(ele).css( prop, indistate2css( data.state ) )
       var container = postProc( data, ele )
-      console.warn(container.children())
 			if( typeof(ele) != 'string' )
 			{
 				ele.appendTo( container )
