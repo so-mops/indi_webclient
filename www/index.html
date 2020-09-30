@@ -1,44 +1,45 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		 <meta charset="UTF-8">
-		 <title>VATT Subsystems</title>
-	</head>
-	<style>
-		body
-		{
-			background: gray;
-		}
-		ul#items
-		{
-			width: 100px;
-			height: 100px;
-			margin: 0 auto;
-			white-space:nowrap;
-		}
-		li.users
-		{
-			font-size:40px;
-		}	
-		li.eng
-		{
-			font-size:15px;
-		}
+<!doctype html>
+<html lang="en">
 
-		#warning
-		{
-			
-			white-space:nowrap;
-		}
-	</style>
-	 <body>
-		<ul id="items">
-			<li class="users"><a href="guidebox_4k.html" title="Guidebox and Secondary control when the VATT4K is on the telescope.">VATT4K</a></li>
-			<li class="users"><a href="guidebox_spectrograph.html" title="Guidebox and Secondary control when the VATTSPEC is on the telescope.">VATTSPEC</a></li>
-			<hr>
-			<li class="eng"><a href="guidebox_engineering.html">Guidebox Engineering</a></li>
-			<li class="eng"><a href="secondary_engineering.html">Secondary Engineering</a></li>
-		</ul>
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-	 </body>
-</html>
+  <title>VATTSpec</title>
+
+  <!-- Import all necessary stylesheets and js -->
+  <link rel="stylesheet" href="css/jquery-ui.min.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/all.css">
+  <link rel="stylesheet" href="css/base.css">
+  <script src="js/jquery-1.12.4.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/plotly-latest.min.js"></script>
+  <script src="js/indi.js"></script>
+
+  <script>
+    $(function () {
+      $("#header").load("/www/header.html");
+      $("#sidebar").load("/www/sidebar.html");
+    })
+  </script>
+</head>
+
+<body>
+  <div id="header"></div>
+  <div class="container-fluid">
+    <div class="row">
+      <div id="sidebar"></div>
+      <main role="main" class="col-lg-10 col-md-9 mt-4 ml-sm-auto px-md-4">
+        <div class="row">
+          <div class="col">
+            <p class="h1">Home</p>
+            <hr style="border-bottom: solid magenta 3px;">
+            <p>Please select the GUI to load on the sidebar. If on mobile, expand the navbar with the <i class="fas fa-bars"></i> icon.</p>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+</body>

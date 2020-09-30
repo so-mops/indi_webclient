@@ -1,10 +1,13 @@
-<!DOCTYPE html>
-<html>
-	<head>
-	 <meta charset="UTF-8">
+<!doctype html>
+<html lang="en">
 
-	<Title> VATTSpec Guidebox and Secondary</Title>
-	
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>VATTSpec</title>
+
   <!-- Import all necessary stylesheets and js -->
   <link rel="stylesheet" href="css/jquery-ui.min.css">
   <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -15,7 +18,16 @@
   <script src="js/plotly-latest.min.js"></script>
   <script src="js/indi.js"></script>
 
+  <script>
+    $(function(){
+      $("#header").load("/www/header.html");
+      $("#sidebar").load("/www/sidebar.html");
+      $("#indilog").load("/www/indi-log.html");
+    })
+  </script>
 	<script>
+
+
 
 	function main()
 	{
@@ -188,112 +200,111 @@
 
 
 	</script>
-	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/vader/jquery-ui.css">
+	<!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/vader/jquery-ui.css"> -->
 </head>
 <body onload="main()">
+  <div id="header"></div>
   <div class="container-fluid">
     <div class="row">
-      <div class="col-xl-8 col-12 mt-4">
-        <div class="card shadow border-0">
-          <div class="card-header border-0">
-            <div class="row">
-              <div class="col">
-                <p class="h4"><i class="fas fa-cogs"></i> VATTSpec</p>
-              </div>
-            </div>
-          </div>
-          <div class="card-body">
-            <div class="row">
-              <div class="col text-center">
-                <p class="h4">Secondary</p>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col">
-                <span id="tipx" class="no-legend" indidevice="VATT Secondary" indigroup="Tip Tilt" indiname="PosV"
-                  title="Secondary Tip X"></span>
-              </div>
-              <div class="col">
-                <span id="tipy" class="no-legend" indidevice="VATT Secondary" indigroup="Tip Tilt" indiname="PosU"
-                  title="Secondary Tip Y"></span>
-              </div>
-              <div class="col">
-                <span id="focus" class="no-legend" indidevice="VATT Secondary" indigroup="Decenter" indiname="PosZ"
-                  title="Secondary Focus"></span>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col">
-                <span id="connect" class="" indidevice="VATT Secondary" indigroup="Main Control" indiname="CONNECTION"></span>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col">
-                <span id="ref" class="no-legend" indidevice="VATT Secondary" indigroup="Miscellaneous" indiname="ref"></span>
-                <span id="corr" class="no-legend" indidevice="VATT Secondary" indigroup="Miscellaneous"
-                  indiname="correct"></span>
-                <span id="err" class="no-legend stack" indidevice="VATT Secondary" indigroup="Miscellaneous"
-                  indiname="err"></span>
-              </div>
-            </div>
-            <hr>
-            <div class="row">
-              <div class="col text-center">
-                <p class="h4">Guidebox</p>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-6 col-12">
-                <span class="sbutton stack" indidevice="INDI-VATT-GUIDEBOX" indiname="CONNECTION"
-                  indigroup="Guider Control"></span>
-              </div>
-              <div class="col-md-6 col-12">
-                <span class="sbutton stack" indidevice="INDI-VATT-GUIDEBOX" indiname="GUIDE_BOX_ACTIONS"
-                  indigroup="Guider Control"></span>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-6 col-12">
-                <span class="fwheel_pos stack" indidevice="INDI-VATT-GUIDEBOX" indiname="UFS" indigroup="Guider Control"></span>
-              </div>
-              <div class="col-md-6 col-12">
-                <span class="fwheel_pos stack" indidevice="INDI-VATT-GUIDEBOX" indiname="LFS" indigroup="Guider Control"></span>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-6 col-12">
-                <span class="linear_pos stack" indidevice="INDI-VATT-GUIDEBOX" indiname="MIRRORS"
-                  indigroup="Guider Control"></span>
-              </div>
-            </div>
+      <div id="sidebar"></div>
+      <main role="main" class="col-lg-10 col-md-9 mt-4 ml-sm-auto px-md-4">
+
+        <div class="row">
+          <div class="col">
+            <p class="h1">VATTSpec</p>
+            <hr style="border-bottom: solid magenta 3px;">
           </div>
         </div>
-      </div>
-    <!-- BEGIN LOGGER -->
-      <div class="col-xl-4 col-12 mt-4">
-        <div class="card shadow border-0">
-          <div class="card-header border-0">
-            <div class="row">
-              <div class="col">
-                <p class="h4"><i class="fas fa-file-alt"></i> INDI Log</p>
+        <div class="row">
+          <div class="col-12">
+            <div class="card shadow-sm border-0">
+              <div class="card-header border-0">
+                <div class="row">
+                  <div class="col">
+                    <p class="lead">Secondary</p>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="row">
+                  <div class="col">
+                    <span id="tipx" class="no-legend" indidevice="VATT Secondary" indigroup="Tip Tilt" indiname="PosV"
+                      title="Secondary Tip X"></span>
+                  </div>
+                  <div class="col">
+                    <span id="tipy" class="no-legend" indidevice="VATT Secondary" indigroup="Tip Tilt" indiname="PosU"
+                      title="Secondary Tip Y"></span>
+                  </div>
+                  <div class="col">
+                    <span id="focus" class="no-legend" indidevice="VATT Secondary" indigroup="Decenter" indiname="PosZ"
+                      title="Secondary Focus"></span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <span id="connect" class="" indidevice="VATT Secondary" indigroup="Main Control" indiname="CONNECTION"></span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <span id="ref" class="no-legend" indidevice="VATT Secondary" indigroup="Miscellaneous" indiname="ref"></span>
+                    <span id="corr" class="no-legend" indidevice="VATT Secondary" indigroup="Miscellaneous"
+                      indiname="correct"></span>
+                    <span id="err" class="no-legend stack" indidevice="VATT Secondary" indigroup="Miscellaneous"
+                      indiname="err"></span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <div class="card-body">
-            <div class="row">
-              <div class="col">
-                <div class="small overflow-auto border border-secondary rounded" id="INDImsg" style="max-height: 200px; min-height:200px;">
+          <div class="col-12 mt-4">
+            <div class="card shadow-sm border-0">
+              <div class="card-header border-0">
+                <div class="row">
+                  <div class="col">
+                    <p class="lead">Guidebox</p>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-6 col-12">
+                    <span class="sbutton stack" indidevice="INDI-VATT-GUIDEBOX" indiname="CONNECTION"
+                      indigroup="Guider Control"></span>
+                  </div>
+                  <div class="col-md-6 col-12">
+                    <span class="sbutton stack" indidevice="INDI-VATT-GUIDEBOX" indiname="GUIDE_BOX_ACTIONS"
+                      indigroup="Guider Control"></span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 col-12">
+                    <span class="fwheel_pos stack" indidevice="INDI-VATT-GUIDEBOX" indiname="UFS" indigroup="Guider Control"></span>
+                  </div>
+                  <div class="col-md-6 col-12">
+                    <span class="fwheel_pos stack" indidevice="INDI-VATT-GUIDEBOX" indiname="LFS" indigroup="Guider Control"></span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 col-12">
+                    <span class="linear_pos stack" indidevice="INDI-VATT-GUIDEBOX" indiname="MIRRORS"
+                      indigroup="Guider Control"></span>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+        <!-- BEGIN LOGGER -->
+        <div class="row">
+          <div class="col mt-4">
+            <div id="indilog"></div>
+          </div>
+        </div>
+      </main>
     </div>
     <!-- END LOGGER -->
   </div>
-</body>
-		
 	<div id="filter_dialog" style="display:none"> 
 		<input type="text" id="filter_name_input"> </input>
 		<script>
@@ -326,8 +337,13 @@
 						window.setTimeout(window.location.reload.bind(window.location), 200);
 					}
 				});
-		</script>
+    </script>
+    
 	</div>
-
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+  integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+  integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 </body>
+
 </html>
