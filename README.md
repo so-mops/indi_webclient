@@ -1,5 +1,8 @@
 # The web based indi client
 
+## OVERHAUL
+Putting a freeze on the overhaul as directed by Paul G. 10/2/2020
+
 ## Undockerized
 It was requested to undockerize the indi_webclient. 
 

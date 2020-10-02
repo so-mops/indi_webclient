@@ -1,18 +1,30 @@
-<!DOCTYPE html>
-<html>
-	<head>
-	 <meta charset="UTF-8">
-	<script src="plotly/plotly-latest.min.js"></script>
+<!doctype html>
+<html lang="en">
 
-	<Title> VATT4K Guidebox and Secondary</Title>
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>VATT4k</title>
   
   <!-- Import all necessary stylesheets and js -->
-  <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/jquery-ui.min.css">
   <link rel="stylesheet" href="css/bootstrap.min.css">
-	<script src="js/jquery-1.12.4.js"></script>
-	<script src="js/jquery-ui.js"></script>
-	<script src="js/plotly-latest.min.js"></script>
+  <link rel="stylesheet" href="css/all.css">
+  <link rel="stylesheet" href="css/base.css">
+  <script src="js/jquery-1.12.4.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/plotly-latest.min.js"></script>
+  <script src="js/indi.js"></script>
+
+  <script>
+    $(function () {
+      $("#header").load("header.html");
+      $("#sidebar").load("sidebar.html");
+      $("#indilog").load("indi-log.html");
+    })
+  </script>
 
 	<script>
 	function main()
@@ -374,8 +386,8 @@
 	}
 
 	</script>
-	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/vader/jquery-ui.css">
-	<link rel="stylesheet" href="vatt_users.css">
+	<!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/vader/jquery-ui.css"> -->
+	<!-- <link rel="stylesheet" href="vatt_users.css"> -->
 	<style>
 		body > fieldset
 		{/*Don't display any uncaptured INDI Vector Props*/
@@ -418,21 +430,62 @@
 	</style>
 </head>
 <body onload="main()">
-  <div class="gui-container">
-    <h1>VATT4k</h1>
-    <h2 style="margin-left: 5px;">Secondary</h2>
-    <div class="flex-container">
-      <span id="tipx" class="no-legend" indidevice="VATT Secondary" indigroup="Tip Tilt" indiname="PosV" title="Secondary Tip X"></span>
-      <span id="tipy" class="no-legend" indidevice="VATT Secondary" indigroup="Tip Tilt" indiname="PosU" title="Secondary Tip Y"></span>
-      <span id="focus" class="no-legend" indidevice="VATT Secondary" indigroup="Decenter" indiname="PosZ" title="Secondary Focus"></span>
-      <span class="stacker-span">
-        <span id="ref" class="no-legend stack" indidevice="VATT Secondary" indigroup="Miscellaneous" indiname="ref"></span>
-        <span id="corr" class="no-legend stack" indidevice="VATT Secondary" indigroup="Miscellaneous" indiname="correct"></span>
-      </span>
-      <span id="err" class="no-legend stack" indidevice="VATT Secondary" indigroup="Miscellaneous" indiname="err"></span>
-      <span id="connect" class="" indidevice="VATT Secondary" indigroup="Main Control" indiname="CONNECTION"></span>
-    </div>
-    <hr style="border: 1px solid gray;">
+  <div id="header"></div>
+  <div class="container-fluid">
+    <div class="row">
+      <div id="sidebar"></div>
+      <main role="main" class="col-lg-10 col-md-9 mt-4 ml-sm-auto px-md-4">
+        <div class="row">
+          <div class="col">
+            <p class="h1">VATT4k</p>
+            <hr style="border-bottom: solid magenta 3px;">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="card shadow-sm border-0">
+              <div class="card-header border-0">
+                <div class="row">
+                  <div class="col">
+                    <p class="lead">Secondary</p>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-6 col-12">
+                    <span id="connect" class="" indidevice="VATT Secondary" indigroup="Main Control"
+                      indiname="CONNECTION"></span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4 col-12">
+                    <span id="tipx" class="no-legend" indidevice="VATT Secondary" indigroup="Tip Tilt" indiname="PosV"
+                      title="Secondary Tip X"></span>
+                  </div>
+                  <div class="col-md-4 col-12">
+                    <span id="tipy" class="no-legend" indidevice="VATT Secondary" indigroup="Tip Tilt" indiname="PosU"
+                      title="Secondary Tip Y"></span>
+                  </div>
+                  <div class="col-md-4 col-12">
+                    <span id="focus" class="no-legend" indidevice="VATT Secondary" indigroup="Decenter" indiname="PosZ"
+                      title="Secondary Focus"></span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 col-6">
+                    <span id="ref" class="" indidevice="VATT Secondary" indigroup="Miscellaneous" indiname="ref"></span>
+                  </div>
+                  <div class="col-md-6 col-6">
+                    <span id="corr" class="" indidevice="VATT Secondary" indigroup="Miscellaneous"
+                      indiname="correct"></span>
+                    <!-- <span id="err" class="no-legend stack" indidevice="VATT Secondary" indigroup="Miscellaneous"
+                        indiname="err"></span> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
     <h2>Guidebox</h2>
     <div class="flex-container">
       <span class="stacker-span" style="margin: 5px;">
