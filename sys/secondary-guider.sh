@@ -21,7 +21,7 @@ printf "\n##### You may minimize this window\n\n"
 printf "\n##### Output from websocketd\n"
 printf "##############################################\n\n"
 
-/snap/bin/midori --app=http://localhost:4002 &
-
-/usr/bin/websocketd --devconsole -port $PORT /home/mtnops/src/git-clones/indi_webclient/webclient
+#/snap/bin/midori --app=http://localhost:4002 &
+firefox -url localhost:4002 -new-instance &
+/usr/bin/websocketd -port 3001 /home/mtnops/src/git-clones/indi_webclient/webclient
 
