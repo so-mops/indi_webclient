@@ -166,8 +166,8 @@
 				}
 			});
 
-		$("span#INITIALIZE.ISwitchspan").prop("title", "Initializes or resets the guidebox. This will cause you to loose position. This should not normally be used unless a motor is in a software limit and won't move.")
-		$("span#HOME.ISwitchspan").prop("title", "Refrences or homes the guidebox motors. This should only need to be done once after a lightning shutdown.")
+		$("span#INITIALIZE.ISwitchspan").prop("title", "Initializes/Resets the guidebox. This will cause you to lose position. Example: Use if motor is in software limit and won't move.")
+		$("span#HOME.ISwitchspan").prop("title", "Refrences/Homes the guidebox motors. Use after recovering from software crash, restarts, or shutdowns. If fields in guidebox are all yellow, you need to reference.")
 		//The below .each function iterates through
 		// all the filter wheel switches and allows
 		// you to bind a right click event to them 
