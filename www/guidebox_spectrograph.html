@@ -71,6 +71,7 @@
 				return;
 			}
 		}
+    document.getElementById("INDI-VATT-GUIDEBOX__CALIB").disabled = true;
 		$("#OFFSET_X > label").text("Offset X")
 		$("#OFFSET_Y > label").text("Offset Y")
 		$("#OFFSET_FOCUS > label").text("FOCUS")
@@ -175,7 +176,6 @@
 		}
 		return rtn
 	}
-  document.getElementById("INDI-VATT-GUIDEBOX__CALIB").disabled = true;
 	$( function() 
 	{
 		$("#tabs").tabs()
