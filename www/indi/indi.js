@@ -803,6 +803,7 @@ function sendNewSwitch(event)
 function sendNewNumber(event)
 {
 	var fn = $(event.target).parent().parent(".INDInvp");
+  console.debug(fn);
 	var INumber = $(event.target)
 	var out = {
 		"task":"updateNumber",
@@ -813,9 +814,11 @@ function sendNewNumber(event)
 		"np":[],
 		}
 	};
+  var count = 0;
 	fn.find("span.INumberspan input.INumber_wo").each(function(ii, np)
 	{	
     console.log('Looping in sendNewNumber');
+    console.log(count)
 		out.newNumber.np.push(
 		{
 			"name":$(np).closest('span.INumberspan').attr("INDIname"),
@@ -823,6 +826,7 @@ function sendNewNumber(event)
 			"value": $(np).prop("value") 
 			
 		});
+    count = count + 1;
 	});
   console.warn(JSON.stringify(out));
 	INDIws.send(JSON.stringify(out));
