@@ -113,7 +113,7 @@
 				if (isNaN(val))
 				{
 					$(this).css("background", "red"); 
-					$(this).off("keypress"); 
+					//$(this).off("keypress"); 
 				}
 				else if(val > -30 && val < 80)
 				{
@@ -127,7 +127,8 @@
 							return false;
 						}
 
-					}); 
+					});
+          $(this).off("keypress");
 
 				}
 				else
