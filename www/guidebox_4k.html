@@ -131,8 +131,32 @@
           return;
         }
       });	
-		$("span#OFFSET_FOCUS.INumberspan > input.INumber_wo").keyup(
-			function(event)
+		$("span#USER_POS.INumberspan > input.INumber_wo").keyup(
+      function (event) {
+        console.debug($(this).val());
+        console.debug('keypress detected');
+        var val = parseFloat($(this).val())
+        if (isNaN(val)) {//It is a bad value unbind the sendNewNumber event
+          console.debug('Bad Value')
+          $(this).css("background", "red");
+          //$(this).off("keypress"); 
+          return;
+        }
+        else if (val > -32 && val < 32) {//Its a good value rebind the sendNewNumber
+          $(this).css("background", "white");
+          if (event.which === 13) {
+            console.log('Guidebox 4k: Firing off new number');
+            sendNewNumber(event)
+            return;
+          }
+          return;
+        }
+        else {//It is a bad value unbind the sendNewNumber event
+          $(this).css("background", "red");
+          return;
+        }
+      });	
+			/* function(event)
 			{
 				var val = parseFloat($(this).val())
 				if (isNaN(val))
@@ -154,7 +178,7 @@
 					$(this).css("background", "red"); 
 					$(this).off("keypress"); 
 				}
-			});
+			}); */
     document.getElementById("INDI-VATT-GUIDEBOX__CALIB").disabled = true;
 		$("span#INITIALIZE.ISwitchspan").prop("title", "Initializes/Resets the guidebox. This will cause you to lose position. Example: Use if motor is in software limit and won't move.")
 		$("span#HOME.ISwitchspan").prop("title", "References/Homes the guidebox motors. Use after recovering from a software crash, restart, or shutdown. Example: If fields in guidebox are all yellow, you need to reference.")
@@ -379,7 +403,6 @@
 		}
 		span
 		{
-			/*display:block;*/
 			flex:0 0 auto;
 		}
 		fieldset#LFS.INDIsvp > span.ISwitchspan,
@@ -388,22 +411,7 @@
 		{
 			display:inline;
 		}
-		/*fieldset#LFS.INDIsvp,
-		fieldset#UFS.INDIsvp,
-		fieldset#GFS.INDIsvp
-		{
-			min-width:250px;
-		}
-		fieldset#OFFSET_X,
-		fieldset#OFFSET_Y,
-		fieldset#OFFSET_FOCUS
-		{
-			min-width:63px;
-		} */
-		label, legend, .INDIgroup h3
-		{
-			/*color:white;*/
-    }
+	
     
    
 	</style>

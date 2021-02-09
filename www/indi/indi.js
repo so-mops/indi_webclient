@@ -447,14 +447,14 @@ function newNumber(INDIvp, appendTo)
 				var ro = $('<span/>', {'class':'INumber_ro'}).css({ width:10*len+'px' })
 				var wo = $("<input/>", {'type':'text', 'class':'INumber_wo'}).prop('size',len)
 				.attr("value", np.value )
-				/* .keypress(function(event)
+				.keypress(function(event)
 				{
 					
 					if(event.which == 13)	
 					{
 						sendNewNumber(event)
 					}
-				}) */
+				})
 				switch(INDIvp.perm)
 				{
 					case INDIPERM_RO:
