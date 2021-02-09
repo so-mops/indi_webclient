@@ -83,6 +83,8 @@
 				var val = parseFloat($(this).val())
 				if (isNaN(val))
 				{//It is a bad value unbind the sendNewNumber event
+          console.debug('Bad Value')
+          console.debug(val)
 					$(this).css("background", "red"); 
 					//$(this).off("keypress"); 
           return;
@@ -90,7 +92,7 @@
 				else if(val > -90 && val < 90)
 				{//Its a good value rebind the sendNewNumber
 					$(this).css("background", "white");
-					$(this).keypress(
+					/* $(this).keypress(
 					function(event)
 					{
 						if(event.which == 13)	
@@ -100,7 +102,12 @@
 							return false;
 						}
 
-					}); 
+					});  */
+          if (event.which === 13) {
+            console.log('Guidebox 4k: Firing off new number');
+            sendNewNumber(event)
+            return;
+          }
           return;
 				}
 				else
