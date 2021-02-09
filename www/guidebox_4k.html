@@ -78,6 +78,7 @@
 		$("span#OFFSET_X.INumberspan > input.INumber_wo").keypress(
 			function(event)
 			{
+        console.debug($(this).val());
         console.debug('keypress detected');
         console.log(event)
 				var val = parseFloat($(this).val())
@@ -92,17 +93,6 @@
 				else if(val > -90 && val < 90)
 				{//Its a good value rebind the sendNewNumber
 					$(this).css("background", "white");
-					/* $(this).keypress(
-					function(event)
-					{
-						if(event.which == 13)	
-						{
-              console.log('Guidebox 4k: Firing off new number');
-							sendNewNumber(event)
-							return false;
-						}
-
-					});  */
           if (event.which === 13) {
             console.log('Guidebox 4k: Firing off new number');
             sendNewNumber(event)
@@ -113,7 +103,6 @@
 				else
 				{//It is a bad value unbind the sendNewNumber event
 					$(this).css("background", "red"); 
-					//$(this).off("keypress"); 
           return;
 				}
 			});	
