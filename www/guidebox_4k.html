@@ -417,6 +417,7 @@
 	</style>
 </head>
 <body onload="main()">
+  <p id="version"></p>
   <div class="gui-container">
     <h1>VATT4k</h1>
     <h2 style="margin-left: 5px;">Secondary</h2>
@@ -496,5 +497,10 @@
 		</script>
 	</div>
 
+  <script>
+    const VERSION = "1.2"
+    document.getElementById("version").textContent = `Version: ${VERSION}`;
+    console.log(`Version: ${VERSION}`)
+  </script>
 </body>
 </html>
