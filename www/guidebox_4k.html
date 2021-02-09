@@ -82,7 +82,7 @@
 				if (isNaN(val))
 				{//It is a bad value unbind the sendNewNumber event
 					$(this).css("background", "red"); 
-					$(this).off("keypress"); 
+					//$(this).off("keypress"); 
 				}
 				else if(val > -90 && val < 90)
 				{//Its a good value rebind the sendNewNumber
@@ -102,7 +102,7 @@
 				else
 				{//It is a bad value unbind the sendNewNumber event
 					$(this).css("background", "red"); 
-					$(this).off("keypress"); 
+					//$(this).off("keypress"); 
 				}
 			});	
 	
@@ -113,7 +113,7 @@
 				if (isNaN(val))
 				{
 					$(this).css("background", "red"); 
-					//$(this).off("keypress"); 
+					$(this).off("keypress"); 
 				}
 				else if(val > -30 && val < 80)
 				{
@@ -127,8 +127,7 @@
 							return false;
 						}
 
-					});
-          $(this).off("keypress");
+					}); 
 
 				}
 				else
