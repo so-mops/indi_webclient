@@ -75,7 +75,8 @@
 		}
 
 		//Check for good values as soon as someon types them
-		$("span#OFFSET_X.INumberspan > input.INumber_wo").keypress(
+    // Use keyup here to get most recent value
+		$("span#OFFSET_X.INumberspan > input.INumber_wo").keyup(
 			function(event)
 			{
         console.debug($(this).val());
