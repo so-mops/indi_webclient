@@ -446,15 +446,20 @@ function newNumber(INDIvp, appendTo)
 				}
 				var ro = $('<span/>', {'class':'INumber_ro'}).css({ width:10*len+'px' })
 				var wo = $("<input/>", {'type':'text', 'class':'INumber_wo'}).prop('size',len)
-				.attr("value", np.value )
-				.keypress(function(event)
-				{
-					
-					if(event.which == 13)	
-					{
-						sendNewNumber(event)
-					}
-				})
+				wo.attr("value", np.value )
+        // Hack to not have double event listeners on offset x y or user pos
+        if (['OFFSET_X, OFFSET_Y, USER_POS'].includes(name)) {
+          console.log(`skipping ${name}`);
+        }
+				else {
+          console.log(name);
+          wo.keypress(function (event) {
+
+            if (event.which == 13) {
+              sendNewNumber(event)
+            }
+          })
+        }
 				switch(INDIvp.perm)
 				{
 					case INDIPERM_RO:
