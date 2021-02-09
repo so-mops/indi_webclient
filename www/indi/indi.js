@@ -448,7 +448,7 @@ function newNumber(INDIvp, appendTo)
 				var wo = $("<input/>", {'type':'text', 'class':'INumber_wo'}).prop('size',len)
 				wo.attr("value", np.value )
         // Hack to not have double event listeners on offset x y or user pos
-        if (['OFFSET_X, OFFSET_Y, USER_POS'].includes(name)) {
+        if (['OFFSET_X', 'OFFSET_Y', 'USER_POS'].includes(name)) {
           console.log(`skipping ${name}`);
         }
 				else {
