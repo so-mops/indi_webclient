@@ -228,6 +228,7 @@
 </head>
 <body onload="main()">
   <p id="version"></p>
+  <p><a href="version.html">View Release Notes</a></p>
   <div class="gui-container">
     <h1>VATTSpec</h1>
     <h2>Secondary</h2>
@@ -274,35 +275,44 @@
 					if( event.which == 13 )
 					{
 						var fname = $(this).val();
-						var re_iname = /(L|U)F(\d)S/g
-						var indiname = $("input.filter_context").attr("id");
-						
-						var re_info = re_iname.exec(indiname)
-						var wheel = re_info[1];
-						var fnum = re_info[2]
-						if(wheel == "L")
-						{
-							var sel = "fieldset#LFS > span#"+indiname +" >  label";
-							var name_sel = "fieldset#LOWER_FNAMES.INDItvp > span#F"+String(fnum)+" > textarea.IText_wo"
+						var format = /[ `!@#$%^&()_\-\[\]{};':"\\|,.<>\/?~]/;
+						if (format.test(fname)) {
+							console.log('Not a valid filter name')
+							$("input.filter_context").remove();
+							$("div#filter_dialog").dialog('close')
 						}
-						else if(wheel == "U")
-						{
-							var sel = "fieldset#UFS > span#"+indiname +" >  label";
-							var name_sel = "fieldset#UPPER_FNAMES.INDItvp > span#F"+String(fnum)+" > textarea.IText_wo"
-						}
-						$(sel).text($(this).val());
-						$(name_sel).text($(this).val());
-						sendNewText({target:$(name_sel).get()});
-						$("input.filter_context").remove();
-						$("div#filter_dialog").dialog('close')
-						window.setTimeout(window.location.reload.bind(window.location), 200);
-					}
+            else {
+
+              var re_iname = /(L|U)F(\d)S/g
+              var indiname = $("input.filter_context").attr("id");
+              
+              var re_info = re_iname.exec(indiname)
+              var wheel = re_info[1];
+              var fnum = re_info[2]
+              if(wheel == "L")
+              {
+                var sel = "fieldset#LFS > span#"+indiname +" >  label";
+                var name_sel = "fieldset#LOWER_FNAMES.INDItvp > span#F"+String(fnum)+" > textarea.IText_wo"
+              }
+              else if(wheel == "U")
+              {
+                var sel = "fieldset#UFS > span#"+indiname +" >  label";
+                var name_sel = "fieldset#UPPER_FNAMES.INDItvp > span#F"+String(fnum)+" > textarea.IText_wo"
+              }
+              $(sel).text($(this).val());
+              $(name_sel).text($(this).val());
+              sendNewText({target:$(name_sel).get()});
+              $("input.filter_context").remove();
+              $("div#filter_dialog").dialog('close')
+              window.setTimeout(window.location.reload.bind(window.location), 200);
+            }
+          }
 				});
 		</script>
   </div>
 
   <script>
-    const VERSION = "1.2"
+    const VERSION = "1.2.1"
     document.getElementById("version").textContent = `Version: ${VERSION}`;
     console.log(`Version: ${VERSION}`)
   </script>
