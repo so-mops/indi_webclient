@@ -79,12 +79,12 @@
 		$("span#OFFSET_X.INumberspan > input.INumber_wo").keyup(
 			function(event)
 			{
-        console.debug($(this).val());
-        console.debug('keypress detected');
+        //console.debug($(this).val());
+        //console.debug('keypress detected');
 				var val = parseFloat($(this).val())
 				if (isNaN(val))
 				{//It is a bad value unbind the sendNewNumber event
-          console.debug('Bad Value')
+          //console.debug('Bad Value')
 					$(this).css("background", "red"); 
 					//$(this).off("keypress"); 
           return;
@@ -93,7 +93,7 @@
 				{//Its a good value rebind the sendNewNumber
 					$(this).css("background", "white");
           if (event.which === 13) {
-            console.log('Guidebox 4k: Firing off new number');
+            //console.log('Guidebox 4k: Firing off new number');
             sendNewNumber(event)
             return;
           }
@@ -108,11 +108,11 @@
 	
 		$("span#OFFSET_Y.INumberspan > input.INumber_wo").keyup(
       function (event) {
-        console.debug($(this).val());
-        console.debug('keypress detected');
+        //console.debug($(this).val());
+        //console.debug('keypress detected');
         var val = parseFloat($(this).val())
         if (isNaN(val)) {//It is a bad value unbind the sendNewNumber event
-          console.debug('Bad Value')
+          //console.debug('Bad Value')
           $(this).css("background", "red");
           //$(this).off("keypress"); 
           return;
@@ -120,7 +120,7 @@
         else if (val > -30 && val < 80) {//Its a good value rebind the sendNewNumber
           $(this).css("background", "white");
           if (event.which === 13) {
-            console.log('Guidebox 4k: Firing off new number');
+            //console.log('Guidebox 4k: Firing off new number');
             sendNewNumber(event)
             return;
           }
@@ -133,11 +133,11 @@
       });	
 		$("span#USER_POS.INumberspan > input.INumber_wo").keyup(
       function (event) {
-        console.debug($(this).val());
-        console.debug('keypress detected');
+        //console.debug($(this).val());
+        //console.debug('keypress detected');
         var val = parseFloat($(this).val())
         if (isNaN(val)) {//It is a bad value unbind the sendNewNumber event
-          console.debug('Bad Value')
+          //console.debug('Bad Value')
           $(this).css("background", "red");
           //$(this).off("keypress"); 
           return;
@@ -145,7 +145,7 @@
         else if (val > -32 && val < 32) {//Its a good value rebind the sendNewNumber
           $(this).css("background", "white");
           if (event.which === 13) {
-            console.log('Guidebox 4k: Firing off new number');
+            //console.log('Guidebox 4k: Firing off new number');
             sendNewNumber(event)
             return;
           }
@@ -462,7 +462,7 @@
 	<textarea rows=3 cols=75 id="INDImsg"></textarea>	
 	
 	<div id="filter_dialog" style="display:none"> 
-		<input type="text" id="filter_name_input"> </input>
+		<input type="text" id="filter_name_input" pattern="[^':]*$" title="Cannot use punctuation in filter name."></input>
 		<script>
 				$("input#filter_name_input").keypress(function(event)
 				{
@@ -499,7 +499,7 @@
 	</div>
 
   <script>
-    const VERSION = "1.2"
+    const VERSION = "1.2.1"
     document.getElementById("version").textContent = `Version: ${VERSION}`;
     console.log(`Version: ${VERSION}`)
   </script>
