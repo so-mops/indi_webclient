@@ -469,7 +469,8 @@
 					if( event.which == 13 )
 					{
 						var fname = $(this).val();
-						if (! /^[a-zA-Z0-9]+$/.test(fname)) {
+            var format = /[ `!@#$%^&()_\-\[\]{};':"\\|,.<>\/?~]/;
+						if (format.test(fname)) {
 							console.log('Not a valid filter name')
               $("input.filter_context").remove();
 							$("div#filter_dialog").dialog('close')
