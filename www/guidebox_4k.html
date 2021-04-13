@@ -469,6 +469,7 @@
 					if( event.which == 13 )
 					{
 						var fname = $(this).val();
+						console.log(`FILTER NAME ${fname}`);
 						var re_iname = /(L|U)F(\d)S/g
 						var indiname = $("input.filter_context").attr("id");
 						
