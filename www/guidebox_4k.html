@@ -469,30 +469,35 @@
 					if( event.which == 13 )
 					{
 						var fname = $(this).val();
-						console.log(`FILTER NAME ${fname}`);
-						var re_iname = /(L|U)F(\d)S/g
-						var indiname = $("input.filter_context").attr("id");
-						
-						var re_info = re_iname.exec(indiname)
-						var wheel = re_info[1];
-						var fnum = re_info[2]
-						if(wheel == "L")
-						{
-							var sel = "fieldset#LFS > span#"+indiname +" >  label";
-							var name_sel = "fieldset#LOWER_FNAMES.INDItvp > span#F"+String(fnum)+" > textarea.IText_wo"
+						if (! /^[a-zA-Z0-9]+$/.test(fname)) {
+							console.log('Not a valid filter name')
 						}
-						else if(wheel == "U")
-						{
-							var sel = "fieldset#UFS > span#"+indiname +" >  label";
+						else {
+							console.log(`FILTER NAME ${fname}`);
+							var re_iname = /(L|U)F(\d)S/g
+							var indiname = $("input.filter_context").attr("id");
+							
+							var re_info = re_iname.exec(indiname)
+							var wheel = re_info[1];
+							var fnum = re_info[2]
+							if(wheel == "L")
+							{
+								var sel = "fieldset#LFS > span#"+indiname +" >  label";
+								var name_sel = "fieldset#LOWER_FNAMES.INDItvp > span#F"+String(fnum)+" > textarea.IText_wo"
+							}
+							else if(wheel == "U")
+							{
+								var sel = "fieldset#UFS > span#"+indiname +" >  label";
+								var name_sel = "fieldset#UPPER_FNAMES.INDItvp > span#F"+String(fnum)+" > textarea.IText_wo"
+							}
+							$(sel).text($(this).val());
+							$(name_sel).text($(this).val());
+							sendNewText({target:$(name_sel).get()});
+							$("input.filter_context").remove();
+							$("div#filter_dialog").dialog('close')
 							var name_sel = "fieldset#UPPER_FNAMES.INDItvp > span#F"+String(fnum)+" > textarea.IText_wo"
+							location.reload();
 						}
-						$(sel).text($(this).val());
-						$(name_sel).text($(this).val());
-						sendNewText({target:$(name_sel).get()});
-						$("input.filter_context").remove();
-						$("div#filter_dialog").dialog('close')
-						var name_sel = "fieldset#UPPER_FNAMES.INDItvp > span#F"+String(fnum)+" > textarea.IText_wo"
-						location.reload();
 					}
 				});
 		</script>
